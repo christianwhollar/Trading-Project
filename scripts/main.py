@@ -96,6 +96,7 @@ def build_dataframe() -> pd.DataFrame:
 
     # Select the columns to use in the model and drop any rows with missing values
     model_data = df[['bitcoin_predicted', 'solana', 'raydium_predicted', 'raydium_tvl', 'ethereum_predicted', 'uniswap_predicted']].dropna()
+    model_data.to_csv('./data/model_data.csv')
     return model_data
 
 def build_model(model_data: pd.DataFrame) -> Tuple[pd.Series, pd.Series]:
@@ -213,6 +214,7 @@ def simulate_trades(y: pd.Series, y_all_pred: pd.Series) -> pd.DataFrame:
     trades_df = pd.DataFrame(trades, columns=['Entry Date', 'Symbol', 'Quantity', 'Entry Price', 'Exit Date', 'Exit Price', 'Return', 'Return per Trade Day'])
     trades_df['Return (USD)'] = trades_df['Quantity'] * (trades_df['Exit Price'] - trades_df['Entry Price'])
     return trades_df
+
 
 def save_figure(y: pd.Series, y_all_pred: pd.Series, trades_df: pd.DataFrame) -> None:
     """
