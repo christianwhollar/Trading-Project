@@ -1,0 +1,12 @@
+        # Plot actual vs predicted prices
+        plt.figure(figsize=(14,7))
+        plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+        plt.gca().xaxis.set_major_locator(mdates.DayLocator(interval=200))
+        plt.plot(y_all, color='blue', label=f'Actual {name.capitalize()} Price')
+        plt.plot(y_all_pred, color='green', label=f'Predicted {name.capitalize()} Price')
+        plt.title(f'{name.capitalize()} Price Prediction')
+        plt.xlabel('Time')
+        plt.ylabel(f'{name.capitalize()} Price')
+        plt.legend()
+        plt.gcf().autofmt_xdate()
+        plt.savefig(f'./plots/{name}_price_prediction.png')
