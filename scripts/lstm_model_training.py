@@ -12,7 +12,7 @@ import torch.nn as nn
 import yfinance as yf
 
 from scripts.config import FONT_PATH
-from lstm_model import LSTM
+from scripts.lstm_model import LSTM
 from scripts.utils import get_train_test_sets
 
 def train_lstm_models():

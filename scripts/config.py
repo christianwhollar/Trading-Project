@@ -1,2 +1,2 @@
 # config.py
-FONT_PATH = './BLADRMF_.ttf'
+FONT_PATH = './fonts/BLADRMF_.ttf'
