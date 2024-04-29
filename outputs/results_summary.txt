@@ -1,0 +1,25 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:      Period Return (%)   R-squared:                       0.010
+Model:                            OLS   Adj. R-squared:                 -0.001
+Method:                 Least Squares   F-statistic:                    0.9402
+Date:                Mon, 29 Apr 2024   Prob (F-statistic):              0.335
+Time:                        16:29:58   Log-Likelihood:                -405.70
+No. Observations:                  93   AIC:                             815.4
+Df Residuals:                      91   BIC:                             820.5
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+=========================================================================================
+                            coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------
+const                     7.5995      2.133      3.562      0.001       3.362      11.837
+SPY Period Return (%)    -1.9593      2.021     -0.970      0.335      -5.973       2.055
+==============================================================================
+Omnibus:                      109.976   Durbin-Watson:                   2.079
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2147.708
+Skew:                           3.810   Prob(JB):                         0.00
+Kurtosis:                      25.275   Cond. No.                         1.46
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

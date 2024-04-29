@@ -19,6 +19,13 @@ def get_portfolio_performance():
 def get_portfolio_summary():
     return pd.read_csv('outputs/portfolio_summary.csv')
 
+@st.cache
+def get_text_from_file(file_path):
+    with open(file_path, 'r') as file:
+        text = file.read()
+    return text
+
+
 col1, col2 = st.columns([8, 1])
 
 with col1:
@@ -86,3 +93,14 @@ with col1:
 
     # Line chart for visualizing performance comparison
     st.line_chart(portfolio_performance[['Period Return (%)', 'SPY Period Return (%)']])
+
+    # Call the function to get the code
+    text_content = get_text_from_file('./outputs/results_summary.txt')
+
+    # Display the code in your Streamlit app
+    st.code(text_content, language='python')
+
+    st.write("""
+    #### Calculated alpha (α): 7.599 \n
+    #### Calculated beta (β): -1.959         
+    """)
